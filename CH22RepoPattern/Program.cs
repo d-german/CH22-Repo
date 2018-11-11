@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using CH22RepoPattern.Models;
 
 namespace CH22RepoPattern
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var rnd = new Random();
             var booksRepo = new BooksRepository();
@@ -66,13 +63,12 @@ namespace CH22RepoPattern
 
         public static string GetRandomString(Random rnd, int length = 15)
         {
-            
             var charPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvw xyz1234567890";
             var rs = new StringBuilder();
 
             while (length > 0)
             {
-                rs.Append(charPool[(int)(rnd.NextDouble() * charPool.Length)]);
+                rs.Append(charPool[(int) (rnd.NextDouble() * charPool.Length)]);
                 length--;
             }
 
